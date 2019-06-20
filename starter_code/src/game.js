@@ -50,7 +50,11 @@ class Game {
       this.juiceBox = loadImage("assets/cartoon-juice-box.png")
       this.waterBottle = loadImage("assets/water-bottle.png")
       
-      this.bulletImg = loadImage("assets/completed-images/bullet.png")
+      if (choiceScreen.game.character.characterChoice === 'chewy') {
+        this.bulletImg = loadImage("assets/completed-images/bullet.png")
+      } else {
+        this.bulletImg = loadImage("assets/completed-images/samurai-bullet.png")
+      }
 
       this.background.setup();
     }
@@ -89,17 +93,7 @@ class Game {
         }
       });
 
-        image(choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter], this.bulletLeftPosition, this.bulletTopPosition, 110, 110)
-
-
-
-              // if (this.hit) {
-        //     console.log(this.image)
-        //     this.image = choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter]
-        //     console.log(this.image)
-        //     choiceScreen.game.boomImageCounter++;
-        //     if (choiceScreen.game.boomImageCounter > 5) choiceScreen.game.boomImageCounter = 0;
-        // }
+      image(choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter], this.bulletLeftPosition, this.bulletTopPosition, 110, 110)
 
       this.juiceBoxes.forEach((juicebox, i) => {
         juicebox.index = i

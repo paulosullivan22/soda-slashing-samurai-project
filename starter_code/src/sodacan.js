@@ -18,6 +18,9 @@ class SodaCan {
                 
         this.checkCollision()
         
+        if (this.hit) {
+            image(choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter], this.position.left, this.position.top, 110, 110)
+        }
     }
     
     checkCollision(){

@@ -35,33 +35,10 @@ class Character {
             }
         }
 
-        this.checkCollision()
+        // this.checkCollision()
     };
 
     checkCollision() {
-
-    //     // console.time("bullet-collision")
-    //     if (choiceScreen.game.sodaCans.length > 0 && choiceScreen.game.bullets.length > 0) {
-    //             choiceScreen.game.bullets.forEach((bullet, i) => {
-    //                 choiceScreen.game.sodaCans.forEach((el, j) => {
-    //                     if (!(bullet.bulletLeft > el.position.right ||
-    //                         bullet.bulletRight < el.position.left ||
-    //                         bullet.bulletTop > el.position.bottom ||
-    //                         bullet.bulletBottom < el.position.top) ) {
-    //                             console.log("hit")
-    //                             choiceScreen.game.bullets.splice(i,1)
-    //                             choiceScreen.game.sodaCounter += 1;
-    //                             choiceScreen.game.sodaCans[j].image = choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter]
-    //                             choiceScreen.game.boomImageCounter++;
-    //                             if (choiceScreen.game.boomImageCounter > 5) choiceScreen.game.boomImageCounter = 0;
-    //                             setTimeout(function() {
-    //                                 choiceScreen.game.sodaCans.splice(j, 1)
-    //                             }, 600)
-                            
-    //                     }})
-    //         })
-    //     }
-        // console.timeEnd("bullet-collision")
 
         if (choiceScreen.game.juiceBoxes.length > 0) {
             choiceScreen.game.juiceBoxes.forEach(el => {
