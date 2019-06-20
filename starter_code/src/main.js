@@ -21,8 +21,6 @@ function draw() {
 function mouseClicked(){
   choiceScreen.mouseClicked();
   if (choiceScreen.game) {
-    choiceScreen.game.createBullet(mouseX, mouseY)
-    // choiceScreen.game.character.mouseClicked() 
-    
+    choiceScreen.game.createBullet(mouseX, mouseY)    
   }
 }

@@ -16,7 +16,8 @@ class SodaCan {
         if (choiceScreen.game.sodaCounter > 10) this.y += 0.25
         if (choiceScreen.game.sodaCounter > 20) this.y += 0.35
                 
-        this.checkCollision()        
+        this.checkCollision()
+        
     }
     
     checkCollision(){
@@ -27,13 +28,15 @@ class SodaCan {
             bottom: this.y + 110
         }
 
-        if (choiceScreen.game.bullets.length > 1) {
-            console.log(choiceScreen.game.bullets[0].rect)
+        if (choiceScreen.game.bullets.length > 1 && choiceScreen.game.sodaCans.length > 0) {
             choiceScreen.game.bullets.forEach((el,i)=>{
-            // console.log(el.rect)
             if(intersectRect(this.position, el.rect)){
                 choiceScreen.game.bullets.splice(i,1)
-                this.hit = true
+                this.hit = true;
+                choiceScreen.game.boomImageCounter++;
+                if (choiceScreen.game.boomImageCounter > 5) choiceScreen.game.boomImageCounter = 0;
+                choiceScreen.game.sodaCounter += 1;
+
             }
             
         })}
@@ -50,6 +53,7 @@ class SodaCan {
                 }
             }
         )    
+
      function intersectRect(rectA, rectB) {
             return !(
               rectA.left > rectB.right ||

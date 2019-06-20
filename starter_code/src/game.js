@@ -11,6 +11,8 @@ class Game {
       this.chewyImageCounter = 0;
       this.samuraiImageCounter = 0;
       this.sodaCanInterval = 0;
+      this.bulletLeftPosition = 0;
+      this.bulletTopPosition = 0;
     }
     setup() {
 
@@ -74,18 +76,30 @@ class Game {
       }
 
       this.bullets.forEach((bullet, i) => {
-        // if (i > 0) {
-          bullet.draw()
-        // }
+        bullet.draw()
       })
   
       this.sodaCans.forEach((sodaCan, i) => {
-        // sodaCan.index = i;
+        sodaCan.index = i;
         sodaCan.draw();
         if(sodaCan.hit){
-          this.sodaCans.splice(i,1)
+          this.bulletLeftPosition = sodaCan.position.left;
+          this.bulletTopPosition = sodaCan.position.top;
+          this.sodaCans.splice(i, 1)
         }
       });
+
+        image(choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter], this.bulletLeftPosition, this.bulletTopPosition, 110, 110)
+
+
+
+              // if (this.hit) {
+        //     console.log(this.image)
+        //     this.image = choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter]
+        //     console.log(this.image)
+        //     choiceScreen.game.boomImageCounter++;
+        //     if (choiceScreen.game.boomImageCounter > 5) choiceScreen.game.boomImageCounter = 0;
+        // }
 
       this.juiceBoxes.forEach((juicebox, i) => {
         juicebox.index = i

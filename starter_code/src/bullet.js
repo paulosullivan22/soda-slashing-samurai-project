@@ -19,9 +19,9 @@ class Bullet {
             let diffX = this.mouseX - this.bulletX - 8;
             let diffY = this.mouseY - this.bulletY - 10; 
 
-            if (this.bulletX <= WIDTH) this.bulletX+=(diffX/2);
+            if (this.bulletX <= WIDTH) this.bulletX+=(diffX/5);
 
-            if (this.bulletY >= 0) this.bulletY+=(diffY/2);
+            if (this.bulletY >= 0) this.bulletY+=(diffY/5);
         
     
         // if (diffX < 10) choiceScreen.game.bullets.splice(this.index, 1)
