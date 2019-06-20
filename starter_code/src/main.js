@@ -1,21 +1,28 @@
-// let game = new Game();
-let cursorImg;
+let pressStartFont;
 let choiceScreen = new ChoiceScreen();
+
+function preload() {
+  pressStartFont = loadFont('assets/ARCADECLASSIC.woff')
+}
 
 function setup() {
   let canvas = createCanvas(WIDTH, HEIGHT);
   canvas.parent("game-board");
+  textFont(pressStartFont);
   choiceScreen.setup();
   choiceScreen.game && choiceScreen.game.setup();
-  // this.cursorImg = loadImage('assets/completed-images/Blue_Lightsaber_icon.png')
 }
 
 function draw() {
   choiceScreen.draw();
-  cursor(this.cursorImg, 16, 16)
   choiceScreen.game && choiceScreen.game.draw()
 }
 
 function mouseClicked(){
-  choiceScreen.game.character.mouseClicked()
+  choiceScreen.mouseClicked();
+  if (choiceScreen.game) {
+    choiceScreen.game.createBullet(mouseX, mouseY)
+    // choiceScreen.game.character.mouseClicked() 
+    
+  }
 }

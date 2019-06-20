@@ -2,19 +2,19 @@ class Game {
     constructor(characterChoice) {
       this.background = new Background();
       this.character = new Character(characterChoice);
+      this.bullets = [];
       this.sodaCounter = 0;
-      this.obstacles = [];
+      this.sodaCans = [];
       this.juiceBoxes = [];
+      this.waterBottles = [];
       this.boomImageCounter = 0;
       this.chewyImageCounter = 0;
       this.samuraiImageCounter = 0;
-      this.obstacleInterval = 0;
+      this.sodaCanInterval = 0;
     }
     setup() {
 
       this.heartImage = loadImage("assets/completed-images/heart.png")
-
-      this.gameOver = loadImage("assets/completed-images/game-over.jpg")
 
       this.boomImage1 = loadImage("assets/completed-images/bang-words.png")
       this.boomImage2 = loadImage("assets/completed-images/bang.png")
@@ -46,8 +46,9 @@ class Game {
 
       this.sodaCan = loadImage("assets/soda-can-cartoon-3.png")
       this.juiceBox = loadImage("assets/cartoon-juice-box.png")
-      // this.boom = loadImage(boomImages[this.boomImageCounter])
+      this.waterBottle = loadImage("assets/water-bottle.png")
       
+      this.bulletImg = loadImage("assets/completed-images/bullet.png")
 
       this.background.setup();
     }
@@ -56,22 +57,34 @@ class Game {
       this.background.draw();
       this.character.draw();
 
-      if (frameCount % (70 - this.obstacleInterval) === 0) {
-        this.obstacles.push(new Obstacle());
-        if (this.obstacleInterval > 40) {
-          this.obstacleInterval -= 1.5;
-        }
-        this.obstacleInterval += 0.5
-
+      if (frameCount % 70 === 0) {
+        this.sodaCans.push(new SodaCan());
       }
+
+      if (this.sodaCounter > 15 & frameCount % 60 === 0) {
+        this.sodaCans.push(new SodaCan());
+      }  
 
       if (frameCount % 1000 === 0) {
         this.juiceBoxes.push(new JuiceBox())
       }
+
+      if (frameCount % 500 === 0) {
+        this.waterBottles.push(new WaterBottle)
+      }
+
+      this.bullets.forEach((bullet, i) => {
+        // if (i > 0) {
+          bullet.draw()
+        // }
+      })
   
-      this.obstacles.forEach((obstacle, i) => {
-        obstacle.index = i;
-        obstacle.draw();
+      this.sodaCans.forEach((sodaCan, i) => {
+        // sodaCan.index = i;
+        sodaCan.draw();
+        if(sodaCan.hit){
+          this.sodaCans.splice(i,1)
+        }
       });
 
       this.juiceBoxes.forEach((juicebox, i) => {
@@ -79,13 +92,42 @@ class Game {
         juicebox.draw()
       });
 
+      this.waterBottles.forEach((waterbottle, i) => {
+        waterbottle.index = i
+        waterbottle.draw()
+      });
+      
+
       if (choiceScreen.game.character.lifeCount.length === 0) choiceScreen.game.over()
+      textSize(50)
+      fill(255, 255, 255)
+      text('LIFE COUNT', 180, 60)
+
+      text('SODAS  SLASHED', 1000, 60)
+      text(this.sodaCounter, 1150, 100)
+
+      cursor(CROSS)
+    }
+
+    createBullet(mouseX, mouseY) {
+        this.bullets.push(new Bullet(mouseX, mouseY));
     }
 
     over() {
       clear()
+      this.gameOver = true;
       console.log("GAME OVER");
-      image(choiceScreen.game.gameOver, 50, 50)
+      fill(0, 0, 0)
+      textSize(300)
+      text('GAME', 580, 250)
+      text('OVER', 580, 450)
+      textSize(50)
+      text('YOUR  SCORE  WAS', 580, 610)
+      textSize(75)
+      text(this.sodaCounter, 580, 650)
+      textSize(50)
+      text('C LICK  TO  RESTART', 580, 750)
       noLoop();
     }
-  }
+
+  } 
