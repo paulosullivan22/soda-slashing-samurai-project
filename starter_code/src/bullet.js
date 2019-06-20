@@ -18,14 +18,11 @@ class Bullet {
         }
         
         image(choiceScreen.game.bulletImg, this.bulletX, this.bulletY)
-        if (choiceScreen.game.character === 'samurai') image(choiceScreen.game.bulletImg, this.bulletX - 5, this.bulletY + 5)
+        if (choiceScreen.game.character === 'samurai') image(choiceScreen.game.bulletImg, this.bulletX - 5, this.bulletY + 5) 
 
-            // let diffX = this.mouseX - this.bulletX - 8;
-            // let diffY = this.mouseY - this.bulletY - 10; 
+            this.bulletX+=(this.diffX/5);
 
-            if (this.bulletX <= WIDTH) this.bulletX+=(this.diffX/5);
-
-            if (this.bulletY >= -100) this.bulletY+=(this.diffY/5);
+            this.bulletY+=(this.diffY/5);
     }
 }
 

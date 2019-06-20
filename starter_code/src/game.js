@@ -78,8 +78,11 @@ class Game {
       }
 
       this.bullets.forEach((bullet, i) => {
+        if (i === 0) bullet.bulletY = 10000;
         bullet.draw()
+        // if (bullet.bulletX > WIDTH || bullet.bulletY < 0) choiceScreen.game.bullets.splice(i,1)
       })
+
   
       this.sodaCans.forEach((sodaCan, i) => {
         sodaCan.index = i;
@@ -91,10 +94,15 @@ class Game {
         }
       });
 
+      if (!this.bulletLeftPosition) this.bulletLeftPosition = - 150;
+
       image(choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter], this.bulletLeftPosition, this.bulletTopPosition, 110, 110)
 
       this.juiceBoxes.forEach((juicebox, i) => {
-        juicebox.index = i
+        juicebox.index = i;
+        if (juicebox.hit) {
+          this.juiceBoxes.splice(i, 1)
+        } 
         juicebox.draw()
       });
 
