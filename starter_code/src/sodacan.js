@@ -16,7 +16,8 @@ class SodaCan {
             bottom: this.y + 110
         }
 
-        image(this.image, this.x, this.y, 110, 110)
+        if (this.type === 'waterBottles') image(this.image, this.x, this.y, 80, 120)
+        else image(this.image, this.x, this.y, 110, 110)
         
         this.x -= Math.floor(Math.random() * (5 - 0.2) + 0.9);
         
@@ -55,7 +56,7 @@ class SodaCan {
                     if (choiceScreen.game.boomImageCounter > 5) choiceScreen.game.boomImageCounter = 0;
                     choiceScreen.game.sodaCounter += 1;
                     if (this.type === 'juiceBoxes') choiceScreen.game.character.lifeCount.push('1')
-                    if (this.type === 'waterBottles' && choiceScreen.game.sodaCounter > 10) choiceScreen.game.sodaCounter -= 10
+                    if (this.type === 'waterBottles' && choiceScreen.game.sodaCounter >= 10) choiceScreen.game.sodaCounter -= 10
                     else if (this.type === 'waterBottles') choiceScreen.game.sodaCounter = 0;
             }
         })}

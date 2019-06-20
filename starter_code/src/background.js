@@ -1,6 +1,6 @@
 class Background {
     constructor() {
-      this.x1 = WIDTH;
+      this.x1 = WIDTH;      // Sets initial position of two images for each level of foreground
       this.x11 = 0;
       
       this.x2 = WIDTH;
@@ -10,15 +10,17 @@ class Background {
       this.x33 = 0;
     }
   
+    // Loads images to page
     setup() {
-      this.bgImageLayer1 = loadImage("assets/foreground.png");
-      this.bgImageLayer2 = loadImage("assets/back-buildings.png");
-      this.bgImageLayer3 = loadImage("assets/far-buildings.png");
+      this.bgImageLayer1 = loadImage("assets/background/foreground.png");
+      this.bgImageLayer2 = loadImage("assets/background/back-buildings.png");
+      this.bgImageLayer3 = loadImage("assets/background/far-buildings.png");
     }
   
     draw() {
         clear()
 
+        // Draws images to canvass
         image(this.bgImageLayer3, this.x33, 0, WIDTH, HEIGHT)
         image(this.bgImageLayer3, this.x3, 0, WIDTH, HEIGHT)
 
@@ -29,6 +31,8 @@ class Background {
         image(this.bgImageLayer1, this.x11, 0, WIDTH, HEIGHT)
         image(this.bgImageLayer1, this.x1, 0, WIDTH, HEIGHT)
 
+        
+        // Loops through images once one has fully passed by screen
         if (this.x1 <= -WIDTH) {
             this.x1 = WIDTH
         }
@@ -53,6 +57,7 @@ class Background {
             this.x33 = WIDTH;
         }
 
+        // Sets speed at which various layers of background move
         this.x1 -= 3.5;
         this.x11 -= 3.5;
 

@@ -3,27 +3,14 @@ class ChoiceScreen {
         this.characterSelectionClicks = 0;
     }
 
-    logChewy() {
-        choiceScreen.game = new Game('chewy')
-        choiceScreen.game.setup();
-        choiceScreen.game.draw();
-        removeElements();
-    }
-
-    logSamurai() {
-        console.log('choose Samurai Jack')
-        choiceScreen.game = new Game('samurai')
-        choiceScreen.game.setup();
-        choiceScreen.game.draw();
-        removeElements();
-    }
-
+    // Character choice images
     setup() {
         textAlign(CENTER, CENTER)
-        this.chewyMugShot = loadImage("assets/completed-images/chewy-character.png")
-        this.samuraiMugShot = loadImage("assets/completed-images/samurai-transparent.png")
+        this.chewyMugShot = loadImage("assets/chewy-images/chewy-character.png")
+        this.samuraiMugShot = loadImage("assets/samurai-images/samurai-transparent.png")
     }
 
+    // Character choice text
     draw() {
         strokeWeight(4)
         background('#efefef')
@@ -47,6 +34,22 @@ class ChoiceScreen {
 
     }
 
+    // Initialize game with different characters
+    startChewyGame() {
+        choiceScreen.game = new Game('chewy')
+        choiceScreen.game.setup();
+        choiceScreen.game.draw();
+        removeElements();
+    }
+
+    startSamuraiGame() {
+        choiceScreen.game = new Game('samurai')
+        choiceScreen.game.setup();
+        choiceScreen.game.draw();
+        removeElements();
+    }
+
+    // Tracks mouse click and chooses game character
     mouseClicked() {
         if (this.characterSelectionClicks === 0) {
             if (
@@ -55,7 +58,7 @@ class ChoiceScreen {
             mouseY > 400 &&
             mouseY < 702
             ) {
-                choiceScreen.logSamurai();
+                choiceScreen.startSamuraiGame();
                 this.characterSelectionClicks++
             }   
             else if (
@@ -64,7 +67,7 @@ class ChoiceScreen {
             mouseY > 400 &&
             mouseY < 702
             ) {
-                choiceScreen.logChewy();
+                choiceScreen.startChewyGame();
                 this.characterSelectionClicks++
             }
         }
