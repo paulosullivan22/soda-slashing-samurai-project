@@ -15,6 +15,9 @@ class SodaCan {
         this.y += 1.25;
         if (choiceScreen.game.sodaCounter > 10) this.y += 0.25
         if (choiceScreen.game.sodaCounter > 20) this.y += 0.35
+        if (choiceScreen.game.sodaCounter > 30) this.y += 0.40
+        if (choiceScreen.game.sodaCounter > 40) this.y += 0.45
+        if (choiceScreen.game.sodaCounter > 50) this.y += 0.5
                 
         this.checkCollision()
         
@@ -31,7 +34,7 @@ class SodaCan {
             bottom: this.y + 110
         }
 
-        if (choiceScreen.game.bullets.length > 1 && choiceScreen.game.sodaCans.length > 0) {
+        if (choiceScreen.game.bullets.length > 1 && choiceScreen.game.sodaCans.length > 0 && this.position.right < WIDTH) {
             choiceScreen.game.bullets.forEach((el,i)=>{
             if(intersectRect(this.position, el.rect)){
                 choiceScreen.game.bullets.splice(i,1)
@@ -48,7 +51,7 @@ class SodaCan {
 
                 if (el.position) {
 
-                    if (el.position.bottom >= HEIGHT && el.position.left >= 0 && el.position.right < WIDTH - 50) {
+                    if (el.position.top >= HEIGHT - 100 && el.position.left >= 0 && el.position.right < WIDTH - 50) {
                         choiceScreen.game.sodaCans.splice(el.index, 1)
                         choiceScreen.game.character.lifeCount.pop()
                         choiceScreen.game.boomImageCounter++;

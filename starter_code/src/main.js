@@ -23,4 +23,8 @@ function mouseClicked(){
   if (choiceScreen.game) {
     choiceScreen.game.createBullet(mouseX, mouseY)    
   }
+  if (choiceScreen.game && choiceScreen.game.gameOver) {
+    console.log('working')
+    location.reload()
+  }
 }

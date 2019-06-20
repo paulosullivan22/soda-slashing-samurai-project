@@ -32,7 +32,6 @@ class Game {
       this.chewyImage4 = loadImage("assets/completed-images/chewy-walking-3.png")
       this.chewyImage5 = loadImage("assets/completed-images/chewy-walking-2.png")
       this.chewyImage6 = loadImage("assets/completed-images/chewy-walking-1.png")
-      this.chewyImageInjured = loadImage("assets/completed-images/chewy-injured.png")
       this.chewyImages = [this.chewyImage1, this.chewyImage2, this.chewyImage3, this.chewyImage4, this.chewyImage5, this.chewyImage6]
 
       this.samuraiImage1 = loadImage("assets/completed-images/jack-walking-8.png")
@@ -43,7 +42,6 @@ class Game {
       this.samuraiImage6 = loadImage("assets/completed-images/jack-walking-3.png")
       this.samuraiImage7 = loadImage("assets/completed-images/jack-walking-2.png")
       this.samuraiImage8 = loadImage("assets/completed-images/jack-walking-1.png")
-      this.samuraiInjured = loadImage("assets/completed-images/jack-crouching.png")
       this.samuraiImages = [this.samuraiImage1, this.samuraiImage2, this.samuraiImage3, this.samuraiImage4, this.samuraiImage5, this.samuraiImage6, this.samuraiImage7, this.samuraiImage8]
 
       this.sodaCan = loadImage("assets/soda-can-cartoon-3.png")
@@ -51,7 +49,7 @@ class Game {
       this.waterBottle = loadImage("assets/water-bottle.png")
       
       if (choiceScreen.game.character.characterChoice === 'chewy') {
-        this.bulletImg = loadImage("assets/completed-images/bullet.png")
+        this.bulletImg = loadImage("assets/completed-images/chewy-bullet.png")
       } else {
         this.bulletImg = loadImage("assets/completed-images/samurai-bullet.png")
       }

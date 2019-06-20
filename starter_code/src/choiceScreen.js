@@ -6,7 +6,7 @@ class ChoiceScreen {
     logChewy() {
         choiceScreen.game = new Game('chewy')
         choiceScreen.game.setup();
-        choiceScreen.game.draw()
+        choiceScreen.game.draw();
         removeElements();
     }
 
@@ -14,7 +14,7 @@ class ChoiceScreen {
         console.log('choose Samurai Jack')
         choiceScreen.game = new Game('samurai')
         choiceScreen.game.setup();
-        choiceScreen.game.draw()
+        choiceScreen.game.draw();
         removeElements();
     }
 
@@ -35,7 +35,7 @@ class ChoiceScreen {
         textSize(60)
         text('SODA  SLASHING  SAMURAI', 580, 100)
         textSize(30)
-        text('KEEP  YOUR  STREETS  CLEAN  BY  CLICKING  ON  FALLING  SODA  CANS', 600, 200)
+        text('KEEP  YOUR  STREETS  CLEAN  BY  SHOOTING  FALLING  SODA  CANS', 600, 200)
         text('HIT  JUICEBOXES  FOR  THAT  SWEET  EXTRA  LIFE', 600, 250)
         text('AVOID  WATERBOTTLES  FOR  MINUS  POINTS', 600, 300)
 

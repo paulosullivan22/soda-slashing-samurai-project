@@ -25,14 +25,15 @@ class Character {
             image(choiceScreen.game.chewyImages[choiceScreen.game.chewyImageCounter], 150, HEIGHT - 250)
             if (frameCount % 8 === 0) {
                 choiceScreen.game.chewyImageCounter++;
-                if (choiceScreen.game.chewyImageCounter === 3) choiceScreen.game.chewyImageCounter = 0;
+                if (choiceScreen.game.chewyImageCounter === 6) choiceScreen.game.chewyImageCounter = 0;
             }
         } else {
             image(choiceScreen.game.samuraiImages[choiceScreen.game.samuraiImageCounter], 150, HEIGHT - 250)
-            if (frameCount % 8 === 0) {
+            if (frameCount % 4 === 0) {
                 choiceScreen.game.samuraiImageCounter++;
-                if (choiceScreen.game.samuraiImageCounter === 3) choiceScreen.game.samuraiImageCounter = 0;
+                if (choiceScreen.game.samuraiImageCounter === 8) choiceScreen.game.samuraiImageCounter = 0;
             }
+   
         }
 
         // this.checkCollision()
