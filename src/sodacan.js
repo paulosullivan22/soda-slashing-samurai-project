@@ -16,8 +16,7 @@ class SodaCan {
             bottom: this.y + 110
         }
 
-        // Draws image to canvass
-        if (this.type === 'waterBottles') image(this.image, this.x, this.y, 80, 120)
+        if (this.type === 'waterBottles') image(this.image, this.x, this.y, 80, 120) // waterbottle image has a different ratio 
         else image(this.image, this.x, this.y, 110, 110)
         
 
@@ -31,13 +30,12 @@ class SodaCan {
         if (choiceScreen.game.sodaCounter > 40) this.y += 0.45
         if (choiceScreen.game.sodaCounter > 50) this.y += 0.5
                 
-        // Checks for collision and, if true, displays boom image at coordinates of collision
+        // Displays boom image at coordinates of collision
         this.checkCollision()
         if (this.hit) {
             image(choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter], this.position.left, this.position.top, 110, 110)
         }
     }
-
 
     intersectRect(rectA, rectB) {
         return !(
@@ -48,7 +46,6 @@ class SodaCan {
         );
       }
     
-
     checkCollision(){
 
         // Loop through bullet array, checking if each bullet collides with obstacle
@@ -84,8 +81,6 @@ class SodaCan {
         )     
     }    
 }
-
-
 
 class JuiceBox extends SodaCan {
     constructor(x, y, hit) {

@@ -18,11 +18,10 @@ class Bullet {
             bottom : this.bulletY + 29
         }
         
-        // Draws bullet image
         image(choiceScreen.game.bulletImg, this.bulletX, this.bulletY)
         if (choiceScreen.game.character === 'samurai') image(choiceScreen.game.bulletImg, this.bulletX - 5, this.bulletY + 5) 
+                // Displays two overlapping images for samurai bullets - looks better than a single bullet
 
-        // Moves bullet towards mouse click position
         this.bulletX+=(this.diffX/5);
         this.bulletY+=(this.diffY/5);
     }

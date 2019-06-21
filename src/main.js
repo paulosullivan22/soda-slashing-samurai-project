@@ -5,7 +5,6 @@ function preload() {
   arcadeClassic = loadFont('assets/font/ARCADECLASSIC.woff')
 }
 
-// Setup canvas and initializes character selection screen
 function setup() {
   let canvas = createCanvas(WIDTH, HEIGHT);
   canvas.parent("game-board");
@@ -14,7 +13,6 @@ function setup() {
   choiceScreen.game && choiceScreen.game.setup();
 }
 
-// Draws character choice screen
 function draw() {
   choiceScreen.draw();
   choiceScreen.game && choiceScreen.game.draw()

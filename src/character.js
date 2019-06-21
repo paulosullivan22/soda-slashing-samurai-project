@@ -8,7 +8,6 @@ class Character {
 
     draw() {
 
-        // Life count
         this.lifeCount.forEach((el, i) => {
             image(choiceScreen.game.heartImage, 50 + (100 * i), 100, 50, 50)
         })

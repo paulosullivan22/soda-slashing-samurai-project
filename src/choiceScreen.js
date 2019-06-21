@@ -3,14 +3,12 @@ class ChoiceScreen {
         this.characterSelectionClicks = 0;
     }
 
-    // Character choice images
     setup() {
         textAlign(CENTER, CENTER)
         this.chewieMugShot = loadImage("assets/chewie-images/chewie-character.png")
         this.samuraiMugShot = loadImage("assets/samurai-images/samurai-transparent.png")
     }
 
-    // Character choice text
     draw() {
         strokeWeight(4)
         background('#efefef')
@@ -34,7 +32,6 @@ class ChoiceScreen {
 
     }
 
-    // Initialize game with different characters
     startchewieGame() {
         choiceScreen.game = new Game('chewie')
         choiceScreen.game.setup();
@@ -49,7 +46,6 @@ class ChoiceScreen {
         removeElements();
     }
 
-    // Tracks mouse click and chooses game character
     mouseClicked() {
         if (this.characterSelectionClicks === 0) {
             if (
