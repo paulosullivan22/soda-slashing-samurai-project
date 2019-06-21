@@ -1,5 +1,3 @@
-test 
-
 class SodaCan {
     constructor() {
         this.x = Math.random() * ((WIDTH + 300) - (WIDTH - 600)) + (WIDTH - 600);
