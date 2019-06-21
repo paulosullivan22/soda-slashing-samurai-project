@@ -93,7 +93,7 @@ class Game {
         this.juiceBoxes.push(new JuiceBox())
       }
 
-      if (frameCount % 500 === 0) {
+      if (frameCount % 500 === 0) { 
         this.waterBottles.push(new WaterBottle)
       }
 
