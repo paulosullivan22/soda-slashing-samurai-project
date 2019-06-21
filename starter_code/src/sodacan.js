@@ -65,7 +65,7 @@ class SodaCan {
                     if (choiceScreen.game.boomImageCounter > 5) choiceScreen.game.boomImageCounter = 0;
 
                     if (this.type === 'sodaCans') choiceScreen.game.sodaCounter += 1;       // Conditions for different obstacles
-                    if (this.type === 'juiceBoxes') choiceScreen.game.character.lifeCount.push('1')    
+                    if (this.type === 'juiceBoxes' && choiceScreen.game.character.lifeCount.length < 7) choiceScreen.game.character.lifeCount.push('1')    
                     if (this.type === 'waterBottles' && choiceScreen.game.sodaCounter > 10) choiceScreen.game.sodaCounter -= 10
                     else if (this.type === 'waterBottles') choiceScreen.game.sodaCounter = 0;
             }
