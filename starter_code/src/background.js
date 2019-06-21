@@ -20,7 +20,7 @@ class Background {
     draw() {
         clear()
 
-        // Draws images to canvass
+        // Draws images to canvas
         image(this.bgImageLayer3, this.x33, 0, WIDTH, HEIGHT)
         image(this.bgImageLayer3, this.x3, 0, WIDTH, HEIGHT)
 

@@ -3,7 +3,7 @@ class Game {
       this.background = new Background();
       this.character = new Character(characterChoice);
       
-      // Initalizing bullet / obstacle arrays
+      // Initalizes bullet / obstacle arrays
       this.bullets = [];
       this.sodaCans = [];
       this.juiceBoxes = [];
@@ -12,7 +12,7 @@ class Game {
       // Item counters
       this.sodaCounter = 0;
       this.boomImageCounter = 0;
-      this.chewyImageCounter = 0;
+      this.chewieImageCounter = 0;
       this.samuraiImageCounter = 0;
 
       // Setting bullet position
@@ -31,24 +31,24 @@ class Game {
       this.boomImage6 = loadImage("assets/boom-images/pow-resized copy.png")
       this.boomImages = [this.boomImage1, this.boomImage2, this.boomImage3, this.boomImage4, this.boomImage5, this.boomImage6]
 
-      // Chewy images
-      this.chewyImage1 = loadImage("assets/chewy-images/chewy-walking-6.png")
-      this.chewyImage2 = loadImage("assets/chewy-images/chewy-walking-5.png")
-      this.chewyImage3 = loadImage("assets/chewy-images/chewy-walking-4.png")
-      this.chewyImage4 = loadImage("assets/chewy-images/chewy-walking-3.png")
-      this.chewyImage5 = loadImage("assets/chewy-images/chewy-walking-2.png")
-      this.chewyImage6 = loadImage("assets/chewy-images/chewy-walking-1.png")
-      this.chewyImages = [this.chewyImage1, this.chewyImage2, this.chewyImage3, this.chewyImage4, this.chewyImage5, this.chewyImage6]
+      // chewie images
+      this.chewieImage1 = loadImage("assets/chewie-images/chewie-walking-6.png")
+      this.chewieImage2 = loadImage("assets/chewie-images/chewie-walking-5.png")
+      this.chewieImage3 = loadImage("assets/chewie-images/chewie-walking-4.png")
+      this.chewieImage4 = loadImage("assets/chewie-images/chewie-walking-3.png")
+      this.chewieImage5 = loadImage("assets/chewie-images/chewie-walking-2.png")
+      this.chewieImage6 = loadImage("assets/chewie-images/chewie-walking-1.png")
+      this.chewieImages = [this.chewieImage1, this.chewieImage2, this.chewieImage3, this.chewieImage4, this.chewieImage5, this.chewieImage6]
 
       // Samurai images
-      this.samuraiImage1 = loadImage("assets/samurai-images/jack-walking-8.png")
-      this.samuraiImage2 = loadImage("assets/samurai-images/jack-walking-7.png")
-      this.samuraiImage3 = loadImage("assets/samurai-images/jack-walking-6.png")
-      this.samuraiImage4 = loadImage("assets/samurai-images/jack-walking-5.png")
-      this.samuraiImage5 = loadImage("assets/samurai-images/jack-walking-4.png")
-      this.samuraiImage6 = loadImage("assets/samurai-images/jack-walking-3.png")
-      this.samuraiImage7 = loadImage("assets/samurai-images/jack-walking-2.png")
-      this.samuraiImage8 = loadImage("assets/samurai-images/jack-walking-1.png")
+      this.samuraiImage1 = loadImage("assets/samurai-images/samurai-walking-8.png")
+      this.samuraiImage2 = loadImage("assets/samurai-images/samurai-walking-7.png")
+      this.samuraiImage3 = loadImage("assets/samurai-images/samurai-walking-6.png")
+      this.samuraiImage4 = loadImage("assets/samurai-images/samurai-walking-5.png")
+      this.samuraiImage5 = loadImage("assets/samurai-images/samurai-walking-4.png")
+      this.samuraiImage6 = loadImage("assets/samurai-images/samurai-walking-3.png")
+      this.samuraiImage7 = loadImage("assets/samurai-images/samurai-walking-2.png")
+      this.samuraiImage8 = loadImage("assets/samurai-images/samurai-walking-1.png")
       this.samuraiImages = [this.samuraiImage1, this.samuraiImage2, this.samuraiImage3, this.samuraiImage4, this.samuraiImage5, this.samuraiImage6, this.samuraiImage7, this.samuraiImage8]
 
       // Obstacle & life icon images
@@ -58,8 +58,8 @@ class Game {
       this.heartImage = loadImage("assets/completed-images/heart.png")
       
       // Bullet images
-      if (choiceScreen.game.character.characterChoice === 'chewy') {
-        this.bulletImg = loadImage("assets/chewy-images/chewy-bullet.png")
+      if (choiceScreen.game.character.characterChoice === 'chewie') {
+        this.bulletImg = loadImage("assets/chewie-images/chewie-bullet.png")
       } else {
         this.bulletImg = loadImage("assets/samurai-images/samurai-bullet.png")
       }

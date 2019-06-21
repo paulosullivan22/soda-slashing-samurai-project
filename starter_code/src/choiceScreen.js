@@ -6,7 +6,7 @@ class ChoiceScreen {
     // Character choice images
     setup() {
         textAlign(CENTER, CENTER)
-        this.chewyMugShot = loadImage("assets/chewy-images/chewy-character.png")
+        this.chewieMugShot = loadImage("assets/chewie-images/chewie-character.png")
         this.samuraiMugShot = loadImage("assets/samurai-images/samurai-transparent.png")
     }
 
@@ -17,7 +17,7 @@ class ChoiceScreen {
         rect(280, 400, 220, 302)
         image(this.samuraiMugShot, 280, 400)
         rect(730, 400, 220, 302)
-        image(this.chewyMugShot, 760, 400)
+        image(this.chewieMugShot, 760, 400)
 
         textSize(60)
         text('SODA  SLASHING  SAMURAI', 580, 100)
@@ -35,8 +35,8 @@ class ChoiceScreen {
     }
 
     // Initialize game with different characters
-    startChewyGame() {
-        choiceScreen.game = new Game('chewy')
+    startchewieGame() {
+        choiceScreen.game = new Game('chewie')
         choiceScreen.game.setup();
         choiceScreen.game.draw();
         removeElements();
@@ -67,7 +67,7 @@ class ChoiceScreen {
             mouseY > 400 &&
             mouseY < 702
             ) {
-                choiceScreen.startChewyGame();
+                choiceScreen.startchewieGame();
                 this.characterSelectionClicks++
             }
         }

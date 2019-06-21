@@ -9,20 +9,22 @@ class Bullet {
     }
 
     draw() {
+
+        // Constantly updates bullet position
         this.rect = {
             left : this.bulletX,
             right : this.bulletX + 29,
             top : this.bulletY,
             bottom : this.bulletY + 29
-
         }
         
+        // Draws bullet image
         image(choiceScreen.game.bulletImg, this.bulletX, this.bulletY)
         if (choiceScreen.game.character === 'samurai') image(choiceScreen.game.bulletImg, this.bulletX - 5, this.bulletY + 5) 
 
-            this.bulletX+=(this.diffX/5);
-
-            this.bulletY+=(this.diffY/5);
+        // Moves bullet towards mouse click position
+        this.bulletX+=(this.diffX/5);
+        this.bulletY+=(this.diffY/5);
     }
 }
 
