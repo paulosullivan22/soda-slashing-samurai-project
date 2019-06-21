@@ -61,7 +61,7 @@ class SodaCan {
                     this.hit = true;
 
                     choiceScreen.game.boomImageCounter++;       // Changes boom image for each collision
-                    if (choiceScreen.game.boomImageCounter > 5) choiceScreen.game.boomImageCounter = 0;
+                    if (choiceScreen.game.boomImageCounter > 7) choiceScreen.game.boomImageCounter = 0;
 
                     if (this.type === 'sodaCans') choiceScreen.game.sodaCounter += 1;       // Conditions for different obstacles
                     if (this.type === 'juiceBoxes' && choiceScreen.game.character.lifeCount.length < 7) choiceScreen.game.character.lifeCount.push('1')    

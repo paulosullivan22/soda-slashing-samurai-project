@@ -23,13 +23,15 @@ class Game {
     setup() {
 
       // Boom images
-      this.boomImage1 = loadImage("assets/boom-images/bang-words.png")
+      this.boomImage1 = loadImage("assets/boom-images/kaboom-words.png")
       this.boomImage2 = loadImage("assets/boom-images/bang.png")
       this.boomImage3 = loadImage("assets/boom-images/boom-layered.jpg")
       this.boomImage4 = loadImage("assets/boom-images/ka-pow.png")
       this.boomImage5 = loadImage("assets/boom-images/explosion-big-resized.png")
       this.boomImage6 = loadImage("assets/boom-images/pow-resized copy.png")
-      this.boomImages = [this.boomImage1, this.boomImage2, this.boomImage3, this.boomImage4, this.boomImage5, this.boomImage6]
+      this.boomImage7 = loadImage("assets/boom-images/bang-words.png")
+      this.boomImage8 = loadImage("assets/boom-images/clipart-boom.png")
+      this.boomImages = [this.boomImage1, this.boomImage2, this.boomImage3, this.boomImage4, this.boomImage5, this.boomImage6, this.boomImage7, this.boomImage8]
 
       // chewie images
       this.chewieImage1 = loadImage("assets/chewie-images/chewie-walking-6.png")
