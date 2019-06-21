@@ -1,56 +1,10 @@
 
+THis project is a 90s style arcade shooter game where the aim is to keep the streets clean by shooting as many soda cans as possible out of the sky. If a soda can touches the ground, the player loses a life. The game ends when the player is out of lives 
 
-This project should include the following:
+Soda cans fall at random intervals, interspersed with water bottles and juiceboxes. Players should avoid shooting waterbottles, which subtract 10 points from the score whilst aiming to hit juiceboxes which add an extra life. 
 
-Background
-Parallax background with different scroll rates 
+There are two characters to choose from, a Samurai or Chewbacca. Each character has a different gun and a different style bullet. 
 
-
-
-Soda Cans
-Images of soda cans flying from right to left across the screen at various heights and spacing, increasing in speed as the game progresses
-If a soda can hits the 0 width or if the user clicks on a juicebox the user loses a life
-Give soda cans different speeds 
-If the user loses three lives, the game stops and they can restart
-
-
-Create an obstacle that moves from left to right
-Randomise the height that it appears
-Create a loop that resends them
-Use setInterval() to send multiple items at a decreasing interval
-
-All objects should fall at a decreasing X-height to end up in the bottom left corner
-
-
-Cursor and collisions
-Mouse cursor of a samurai soda that animates on click, possibly restricting mouse movement over half the canvass
-
-If the user clicks on a soda can, an animation occurs and the soda can disappears
-
-
-
-Character Class
-Possibly a character choice of a samurai or a jedi
-
-
-Day 1 - Setup
-Setup background
-Setup cans and juiceboxes 
-Setup game win/lose rules
-
-Day 2 - Animation
-Mouse animation
-Soda can animation
-Character choice
-
-Day 3 - Bug fixes 
-
-
-
-Monday 
-
-Soda Cans
-Float down to bottom left corner
-Insert random juice box
+This project was inspired by the arcade games I grew up playing as a child. If there are improvements to be made, don't hesitate to create a pull request. 
 
 # soda-slashing-samurai-project
