@@ -17,7 +17,7 @@ function draw() {
   choiceScreen.draw();
   choiceScreen.game && choiceScreen.game.draw()
   let display = touches.length + ' touches';
-  text(display, 5, 10);
+  text(display, 200, 10);
   console.log(display)
 }
 
