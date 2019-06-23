@@ -16,6 +16,9 @@ function setup() {
 function draw() {
   choiceScreen.draw();
   choiceScreen.game && choiceScreen.game.draw()
+  let display = touches.length + ' touches';
+  text(display, 5, 10);
+  console.log(display)
 }
 
 // Game click handlers 
@@ -28,3 +31,4 @@ function mouseClicked(){
     location.reload()
   }
 }
+

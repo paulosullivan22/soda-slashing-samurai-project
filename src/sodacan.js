@@ -64,8 +64,10 @@ class SodaCan {
                     if (this.type === 'juiceBoxes' && choiceScreen.game.character.lifeCount.length < 7) choiceScreen.game.character.lifeCount.push('1')    
                     if (this.type === 'waterBottles' && choiceScreen.game.sodaCounter > 10) choiceScreen.game.sodaCounter -= 10
                     else if (this.type === 'waterBottles') choiceScreen.game.sodaCounter = 0;
-            }
-        })}
+                    }
+                }
+            )
+        }
 
         // Cuts soda can from array and removes a life if it reachs bottom of screen
         choiceScreen.game.sodaCans.forEach(el => {
@@ -74,7 +76,8 @@ class SodaCan {
 
                     if (el.position.top >= HEIGHT - 100 && el.position.left >= 0 && el.position.right < WIDTH - 50) {
                         choiceScreen.game.sodaCans.splice(el.index, 1)
-                        choiceScreen.game.character.lifeCount.pop()
+                        choiceScreen.game.character.lifeCount.splice('1', 1)
+                        return;
                     }
                 }
             }

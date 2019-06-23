@@ -114,7 +114,7 @@ class Game {
       // Updating location of boom images when an obstacle is hit
       image(choiceScreen.game.boomImages[choiceScreen.game.boomImageCounter], this.bulletLeftPosition, this.bulletTopPosition, 110, 110)
 
-      if (choiceScreen.game.character.lifeCount.length === 0) choiceScreen.game.over()
+      if (choiceScreen.game.character.lifeCount.length === 1) choiceScreen.game.over()
     }
 
     createBullet(mouseX, mouseY) {
