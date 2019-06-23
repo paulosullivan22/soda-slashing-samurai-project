@@ -16,7 +16,7 @@ function setup() {
 function draw() {
   choiceScreen.draw();
   choiceScreen.game && choiceScreen.game.draw()
-  let display = touches[0];
+  let display = touches[0][0];
   text(display, 200, 10);
 }
 
