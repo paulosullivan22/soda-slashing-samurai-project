@@ -16,9 +16,10 @@ function setup() {
 function draw() {
   choiceScreen.draw();
   choiceScreen.game && choiceScreen.game.draw()
-  let display = touches[0];
   text(display, 200, 10);
 }
+
+
 
 // Game click handlers 
 function mouseClicked(){
