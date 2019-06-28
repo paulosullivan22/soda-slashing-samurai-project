@@ -10,7 +10,6 @@ class Bullet {
 
     draw() {
 
-        // Constantly updates bullet position
         this.rect = {
             left : this.bulletX,
             right : this.bulletX + 29,

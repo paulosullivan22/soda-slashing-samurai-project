@@ -20,7 +20,6 @@ class SodaCan {
         else image(this.image, this.x, this.y, 110, 110)
         
 
-        // Sets conditions for movement along X and Y axes with increasing speed as game progresses
         this.x -= Math.floor(Math.random() * (5 - 0.2) + 0.9);
         this.y += 1.25;
 
@@ -54,7 +53,7 @@ class SodaCan {
                 if(this.intersectRect(this.position, el.rect)){
 
 
-                    choiceScreen.game.bullets.splice(i,1)   // Bullet disappears
+                    choiceScreen.game.bullets.splice(i,1)
                     this.hit = true;
 
                     choiceScreen.game.boomImageCounter++;       // Changes boom image for each collision
