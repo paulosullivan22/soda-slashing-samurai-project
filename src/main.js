@@ -19,9 +19,6 @@ function draw() {
   text(display, 200, 10);
 }
 
-
-
-// Game click handlers 
 function mouseClicked(){
   choiceScreen.mouseClicked();
   if (choiceScreen.game) {
