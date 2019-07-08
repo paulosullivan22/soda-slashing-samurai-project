@@ -16,7 +16,7 @@ function setup() {
 function draw() {
   choiceScreen.draw();
   choiceScreen.game && choiceScreen.game.draw()
-  text(display, 200, 10);
+  // text(display, 200, 10);
 }
 
 function mouseClicked(){
